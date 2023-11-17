@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#DDDDDD"
+    android:padding="16sp"
+    android:id="@+id/rlRoot"
+    tools:context=".MainActivity"
+    tools:ignore="ExtraText">
+
+    <RelativeLayout
+        android:id="@+id/rlWeather"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        >
+
+        <RelativeLayout
+            android:id="@+id/rlMain"
+            android:layout_width="match_parent"
+            android:layout_height="240sp"
+            android:background="#076A97"
+            android:padding="16sp"
+            tools:ignore="MissingConstraints,TextSizeCheck">
+
+            <TextView
+                android:id="@+id/txtCity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:text="Cidade"
+                android:textColor="#ffff"
+                android:textSize="45sp" />
+
+            <TextView
+                android:id="@+id/txtTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtCity"
+                android:text="Hora"
+                android:textColor="#FFFF"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/imgIcon"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_below="@id/txtTime"
+                android:layout_marginTop="-3dp"
+                android:contentDescription="desenho"
+                android:src="@drawable/phc"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/txtValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/imgIcon"
+                android:layout_alignParentEnd="true"
+                android:fontFamily="sans-serif-medium"
+                android:text="24º"
+                android:textColor="#ffff"
+                android:textSize="70sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_below="@id/rlMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFF"
+            android:padding="16sp"
+            >
+
+            <Button
+                android:id="@+id/btn2"
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Vision"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="15dp"
+                android:backgroundTint="#076A97"
+                android:textColor="@color/white"
+                android:onClick="Voltar"
+                android:text="Voltar" />
+
+            <ImageView
+                android:id="@+id/FeelLike"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/temp"
+                tools:ignore="ContentDescription,ImageContrastCheck" />
+
+            <TextView
+                android:id="@+id/txtTextoFeelLike"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10sp"
+                android:layout_toEndOf="@id/FeelLike"
+                android:fontFamily="sans-serif-medium"
+                android:text="Sensação Térmica"
+                android:textColor="#98A5A5"
+                android:textSize="18sp"
+                tools:ignore="TextContrastCheck" />
+
+            <TextView
+                android:id="@+id/txtValueFeelLike"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtTextoFeelLike"
+                android:layout_alignStart="@id/txtTextoFeelLike"
+                android:fontFamily="sans-serif-medium"
+                android:text="19ª"
+                android:textColor="#98A5A5"
+                android:textSize="20sp"
+                tools:ignore="TextContrastCheck" />
+
+            <ImageView
+                android:id="@+id/Humidity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/FeelLike"
+                android:layout_marginTop="30sp"
+                android:src="@drawable/humidity"
+                tools:ignore="ContentDescription,ImageContrastCheck" />
+
+            <TextView
+                android:id="@+id/txtTextoHumidity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/Humidity"
+                android:layout_marginStart="10sp"
+                android:layout_toEndOf="@id/Humidity"
+                android:fontFamily="sans-serif-medium"
+                android:text="Umidade"
+                android:textColor="#98A5A5"
+                android:textSize="18sp"
+                tools:ignore="TextContrastCheck" />
+
+            <TextView
+                android:id="@+id/txtValueHumidity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtTextoHumidity"
+                android:layout_alignStart="@id/txtTextoHumidity"
+                android:fontFamily="sans-serif-medium"
+                android:text="30%"
+                android:textColor="#98A5A5"
+                android:textSize="20sp"
+                tools:ignore="TextContrastCheck" />
+
+            <ImageView
+                android:id="@+id/Vision"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Humidity"
+                android:layout_marginTop="30sp"
+                android:src="@drawable/vision"
+                tools:ignore="ContentDescription,ImageContrastCheck" />
+
+            <TextView
+                android:id="@+id/txtTextoVision"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/Vision"
+                android:layout_marginStart="10sp"
+                android:layout_toEndOf="@id/Vision"
+                android:fontFamily="sans-serif-medium"
+                android:text="Visibilidade"
+                android:textColor="#98A5A5"
+                android:textSize="18sp"
+                tools:ignore="TextContrastCheck" />
+
+            <TextView
+                android:id="@+id/txtValorVision"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtTextoVision"
+                android:layout_alignStart="@id/txtTextoVision"
+                android:fontFamily="sans-serif-medium"
+                android:text="80%"
+                android:textColor="#98A5A5"
+                android:textSize="20sp"
+                tools:ignore="HardcodedText,TextContrastCheck" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rlMain2"
+        android:layout_width="match_parent"
+        android:layout_height="100sp"
+        android:background="#076A97"
+        android:padding="16sp"
+        tools:ignore="MissingConstraints,TextSizeCheck">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bem Vindo!"
+            android:textColor="@color/white"
+            android:fontFamily="sans-serif-medium"
+            android:textSize="25sp"
+            android:layout_centerInParent="true"
+            />
+
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/title2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Insira uma cidade"
+        android:layout_below="@id/rlMain2"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10sp"
+        />
+
+    <EditText
+        android:id="@+id/edt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rlMain2"
+        android:layout_marginTop="80dp"
+        android:backgroundTint="@color/black"
+        android:drawableTint="#000000"
+        android:focusedByDefault="false"
+        android:foregroundTint="#000000"
+        android:minHeight="48dp"
+        android:text="Cidade"
+        android:textColor="@color/black" />
+
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edt"
+        android:layout_centerInParent="true"
+        android:backgroundTint="#076A97"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/white"
+        android:text="Clima"
+        android:onClick="Clima"
+        />
+
+</RelativeLayout>
