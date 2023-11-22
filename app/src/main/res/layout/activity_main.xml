@@ -4,11 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     android:background="#DDDDDD"
-    android:padding="16sp"
-    android:id="@+id/rlRoot"
-    tools:context=".MainActivity"
-    tools:ignore="ExtraText">
+    android:id="@+id/rlMain_Ac"
+    tools:context=".MainActivity">
 
     <RelativeLayout
         android:id="@+id/rlWeather"
@@ -20,28 +19,31 @@
         <RelativeLayout
             android:id="@+id/rlMain"
             android:layout_width="match_parent"
-            android:layout_height="240sp"
+            android:layout_height="240dp"
             android:background="#076A97"
-            android:padding="16sp"
-            tools:ignore="MissingConstraints,TextSizeCheck">
+            android:padding="16dp"
+            >
 
             <TextView
                 android:id="@+id/txtCity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="City"
+                android:textSize="45dp"
+                android:textColor="#ffffff"
                 android:fontFamily="sans-serif-medium"
-                android:text="Cidade"
-                android:textColor="#ffff"
-                android:textSize="45sp" />
+                />
 
             <TextView
                 android:id="@+id/txtTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtCity"
-                android:text="Hora"
-                android:textColor="#FFFF"
-                android:textSize="20sp" />
+                android:text="Time"
+                android:textColor="#ffffff"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif"
+                />
 
             <ImageView
                 android:id="@+id/imgIcon"
@@ -49,145 +51,143 @@
                 android:layout_height="120dp"
                 android:layout_below="@id/txtTime"
                 android:layout_marginTop="-3dp"
-                android:contentDescription="desenho"
                 android:src="@drawable/phc"
-                tools:ignore="ContentDescription" />
+                />
 
             <TextView
                 android:id="@+id/txtValue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="3°"
+                android:layout_alignParentRight="true"
                 android:layout_alignBottom="@id/imgIcon"
-                android:layout_alignParentEnd="true"
+                android:textSize="70dp"
+                android:textColor="#ffffff"
                 android:fontFamily="sans-serif-medium"
-                android:text="24º"
-                android:textColor="#ffff"
-                android:textSize="70sp" />
+                />
+
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/rlSub"
             android:layout_below="@id/rlMain"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#FFFF"
-            android:padding="16sp"
+            android:background="#ffffff"
+            android:padding="16dp"
             >
 
             <Button
                 android:id="@+id/btn2"
                 android:layout_width="125dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/Vision"
+                android:layout_below="@id/txtValueVision"
                 android:layout_centerInParent="true"
                 android:layout_marginTop="15dp"
                 android:backgroundTint="#076A97"
-                android:textColor="@color/white"
                 android:onClick="Voltar"
-                android:text="Voltar" />
+                android:text="Voltar"
+                android:textColor="@color/white" />
 
             <ImageView
-                android:id="@+id/FeelLike"
+                android:id="@+id/imgFeelLike"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/temp"
-                tools:ignore="ContentDescription,ImageContrastCheck" />
+                />
 
             <TextView
-                android:id="@+id/txtTextoFeelLike"
+                android:id="@+id/txtTitleFeelLike"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10sp"
-                android:layout_toEndOf="@id/FeelLike"
-                android:fontFamily="sans-serif-medium"
-                android:text="Sensação Térmica"
+                android:layout_toRightOf="@+id/imgFeelLike"
+                android:layout_marginLeft="10dp"
                 android:textColor="#98A5A5"
-                android:textSize="18sp"
-                tools:ignore="TextContrastCheck" />
+                android:text="Sensação Térmica"
+                android:textSize="16dp"
+                />
 
             <TextView
                 android:id="@+id/txtValueFeelLike"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/txtTextoFeelLike"
-                android:layout_alignStart="@id/txtTextoFeelLike"
-                android:fontFamily="sans-serif-medium"
-                android:text="19ª"
+                android:layout_toRightOf="@id/imgFeelLike"
+                android:layout_below="@id/txtTitleFeelLike"
+                android:layout_marginLeft="10dp"
                 android:textColor="#98A5A5"
-                android:textSize="20sp"
-                tools:ignore="TextContrastCheck" />
+                android:text="7°"
+                android:textSize="20dp"
+                />
 
             <ImageView
-                android:id="@+id/Humidity"
+                android:id="@+id/imgHumidity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/FeelLike"
-                android:layout_marginTop="30sp"
                 android:src="@drawable/humidity"
-                tools:ignore="ContentDescription,ImageContrastCheck" />
+                android:layout_below="@id/imgFeelLike"
+                android:layout_marginTop="30dp"
+                />
 
             <TextView
-                android:id="@+id/txtTextoHumidity"
+                android:id="@+id/txtTitleHumidity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@id/Humidity"
-                android:layout_marginStart="10sp"
-                android:layout_toEndOf="@id/Humidity"
-                android:fontFamily="sans-serif-medium"
+                android:layout_toRightOf="@+id/imgHumidity"
+                android:layout_alignTop="@id/imgHumidity"
+                android:layout_marginLeft="10dp"
                 android:text="Umidade"
                 android:textColor="#98A5A5"
-                android:textSize="18sp"
-                tools:ignore="TextContrastCheck" />
+                android:textSize="16dp"
+                />
 
             <TextView
                 android:id="@+id/txtValueHumidity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/txtTextoHumidity"
-                android:layout_alignStart="@id/txtTextoHumidity"
-                android:fontFamily="sans-serif-medium"
-                android:text="30%"
+                android:layout_toRightOf="@id/imgHumidity"
+                android:layout_below="@id/txtTitleHumidity"
+                android:layout_marginLeft="10dp"
                 android:textColor="#98A5A5"
-                android:textSize="20sp"
-                tools:ignore="TextContrastCheck" />
+                android:text="7°"
+                android:textSize="20dp"
+                />
 
             <ImageView
-                android:id="@+id/Vision"
+                android:id="@+id/imgVision"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/Humidity"
-                android:layout_marginTop="30sp"
                 android:src="@drawable/vision"
-                tools:ignore="ContentDescription,ImageContrastCheck" />
+                android:layout_below="@id/imgHumidity"
+                android:layout_marginTop="30dp"
+                />
 
             <TextView
-                android:id="@+id/txtTextoVision"
+                android:id="@+id/txtTitleVision"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@id/Vision"
-                android:layout_marginStart="10sp"
-                android:layout_toEndOf="@id/Vision"
-                android:fontFamily="sans-serif-medium"
+                android:layout_toRightOf="@+id/imgVision"
+                android:layout_alignTop="@id/imgVision"
+                android:layout_marginLeft="10dp"
                 android:text="Visibilidade"
                 android:textColor="#98A5A5"
-                android:textSize="18sp"
-                tools:ignore="TextContrastCheck" />
+                android:textSize="16dp"
+                />
 
             <TextView
-                android:id="@+id/txtValorVision"
+                android:id="@+id/txtValueVision"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/txtTextoVision"
-                android:layout_alignStart="@id/txtTextoVision"
-                android:fontFamily="sans-serif-medium"
-                android:text="80%"
+                android:layout_toRightOf="@id/imgVision"
+                android:layout_below="@id/txtTitleVision"
+                android:layout_marginLeft="10dp"
                 android:textColor="#98A5A5"
-                android:textSize="20sp"
-                tools:ignore="HardcodedText,TextContrastCheck" />
+                android:text="7°"
+                android:textSize="20dp"
+                />
 
         </RelativeLayout>
 
     </RelativeLayout>
-
 
     <RelativeLayout
         android:id="@+id/rlMain2"
@@ -226,30 +226,44 @@
         />
 
     <EditText
-        android:id="@+id/edt"
+        android:id="@+id/edt_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/rlMain2"
-        android:layout_marginTop="80dp"
+        android:layout_below="@id/title2"
+        android:hint="Cidade"
+        android:textColorHint="#848484"
+        android:textCursorDrawable="@drawable/barrinha"
+        android:minHeight="48dp"
+        android:layout_marginTop="30sp"
         android:backgroundTint="@color/black"
         android:drawableTint="#000000"
-        android:focusedByDefault="false"
         android:foregroundTint="#000000"
-        android:minHeight="48dp"
-        android:text="Cidade"
-        android:textColor="@color/black" />
+        android:textColor="@color/black"
+        />
 
     <Button
-        android:id="@+id/btn"
-        android:layout_width="125dp"
+        android:id="@+id/btnLoading"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/edt"
-        android:layout_centerInParent="true"
         android:backgroundTint="#076A97"
-        android:layout_marginTop="15dp"
-        android:textColor="@color/white"
         android:text="Clima"
         android:onClick="Clima"
+        android:layout_below="@id/edt_input"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"
+        />
+
+    <Button
+        android:id="@+id/btnLocal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#076A97"
+        android:text="Local"
+        android:onClick="Local"
+        android:layout_below="@id/btnLoading"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"
+        android:layout_marginTop="10dp"
         />
 
 </RelativeLayout>
